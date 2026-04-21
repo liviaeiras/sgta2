@@ -25,3 +25,12 @@ class Tarefa(models.Model):
 
     def __str__(self):
         return self.titulo
+    
+from usuarios.models import Usuario
+
+usuario_responsavel = models.ForeignKey(
+    Usuario,
+    on_delete=models.SET_NULL,
+    null=True,
+    blank=True
+)
